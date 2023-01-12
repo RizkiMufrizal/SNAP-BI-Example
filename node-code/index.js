@@ -47,3 +47,9 @@ var hash = sig.signString(stringSign);
 var signedEncoded = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Hex.parse(hash));
 
 console.log(signedEncoded);
+
+// hmac sha512
+var component = "12345";
+var secretkey = "0987654321";
+var hashHmac = CryptoJS.HmacSHA512(component, secretkey);
+console.log(CryptoJS.enc.Base64.stringify(hashHmac));
